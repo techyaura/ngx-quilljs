@@ -1,0 +1,33 @@
+<div class="jumbotron text-center">
+  <h1>ANGULAR: - Quill Editor</h1>
+</div>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-12">
+        <form [formGroup]="formObj" class="form-horizontal" (submit)="submit()">    
+          <!-- Quil Editor -->
+          <div class="form-group">
+            <ngx-quilljs [options]="options" formControlName="content"></ngx-quilljs>
+          </div>
+          <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+          </div>
+        </form>
+    </div>
+  </div><!--Row End-->
+
+  <div class="row">
+    <!-- Content view -->
+    <div class="col-sm-12">
+      <div>
+        <b  style="color: red;">ContentText</b>
+        <div [innerHTML]="htmlProperty"></div>
+      </div>
+    </div>
+  </div><!--Row End-->
+
+</div><!-- Container End-->
