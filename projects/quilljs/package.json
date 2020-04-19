@@ -1,16 +1,16 @@
 {
   "name": "ngx-quilljs",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": {
     "name": "abhay",
     "email": "techyaura@gmail.com",
     "url": "https://github.com/techyaura"
   },
   "bugs": {
-    "url": "https://github.com/techyaura/quilljs/issues"
+    "url": "https://github.com/techyaura/ngx-quilljs/issues"
   },
   "description": "Quilljs editor for Angular",
-  "homepage": "https://github.com/techyaura/quilljs",
+  "homepage": "https://github.com/techyaura/ngx-quilljs",
   "keywords": [
     "angular",
     "editor",
@@ -29,6 +29,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/techyaura/quilljs.git"
+    "url": "https://github.com/techyaura/ngx-quilljs.git"
   }
 }
