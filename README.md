@@ -1,27 +1,56 @@
-# Quiljs
+# ngx-quilljs
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
+A Angular specific rich text editor using Quill Js
 
-## Development server
+## Install
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`npm i ngx-quilljs`
 
-## Code scaffolding
+## use
+Use Module
+```...
+imports: [
+    QuilljsModule
+],
+```
+Then, use component
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+<ngx-quilljs formControlName="<CONTROL_NAME>" options="<OPTIONAL>"></ngx-quilljs>
+```
+## Editor OPTIONS
 
-## Build
+```
+Options = {
+  theme: <THEME>, 
+  placeholder: '',
+  toolbar: <TOOLBAR>
+};
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+`<THEME-OPTIONS>`
 
-## Running unit tests
+```
+'snow' OR 'bubble'
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
 
-## Running end-to-end tests
+`<TOOLBAR-OPTIONS>`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+[
+	['bold', 'italic', 'underline', 'strike', 'image'],  // toggled buttons
+	['blockquote', 'code-block'],
+	[{ header: 1 }, { header: 2 }],                      // custom button values
+	[{ list: 'ordered'}, { list: 'bullet' }],
+	[{ script: 'sub'}, { script: 'super' }],             // superscript/subscript
+	[{ indent: '-1'}, { indent: '+1' }],                 // outdent/indent
+	[{ direction: 'rtl' }],                              // text direction
+	[{ size: ['small', false, 'large', 'huge'] }],       // custom dropdown
+	[{ header: [1, 2, 3, 4, 5, 6, false] }],
+	[{ color: [] }, { background: [] }],                 // dropdown with defaults from theme
+	[{ font: [] }],
+	[{ align: [] }],
+	['clean']                                            // remove formatting button
+]
+```

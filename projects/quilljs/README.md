@@ -1,6 +1,6 @@
 # ngx-quilljs
 
-A Angular specific rich text editor using Quill Js
+An Angular specific rich text editor using Quill Js
 
 ## Install
 
@@ -19,6 +19,23 @@ Then, use component
 <ngx-quilljs formControlName="<CONTROL_NAME>" options="<OPTIONAL>"></ngx-quilljs>
 ```
 ## Editor OPTIONS
+
+```
+Options = {
+  theme: <THEME>, 
+  placeholder: '',
+  toolbar: <TOOLBAR>
+};
+```
+
+`<THEME-OPTIONS>`
+
+```
+'snow' OR 'bubble'
+
+```
+
+`<TOOLBAR-OPTIONS>`
 
 ```
 [
