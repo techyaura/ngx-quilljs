@@ -10,7 +10,11 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class AppComponent implements OnInit {
   title = 'angularlib';
   options = {
-    theme: 'snow'
+    // theme: 'bubble',
+    placeholder: '',
+    toolbar: [
+      ['bold', 'italic', 'underline', 'strike', 'image']
+    ]
   };
   formObj: FormGroup;
   isSubmit = false;
