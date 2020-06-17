@@ -22,9 +22,10 @@ Then, use component
 
 ```
 Options = {
-  theme: <THEME>, 
-  placeholder: '',
-  toolbar: <TOOLBAR>
+  theme: <THEME>, // Defaults to 'snow'
+  placeholder: '', 
+  toolbar: <TOOLBAR> // Defaults to all the tools available for Quill Editor,
+  height: '' // defaults to 100px
 };
 ```
 
@@ -34,6 +35,13 @@ Options = {
 'snow' OR 'bubble'
 
 ```
+SNOW
+
+[![default.png](https://i.postimg.cc/Wb67Fmkr/default.png)](https://postimg.cc/7fhzj2XY)
+
+Bubble
+
+[![bubble.png](https://i.postimg.cc/sgj4pBYL/bubble.png)](https://postimg.cc/hfYmnt38)
 
 `<TOOLBAR-OPTIONS>`
 
