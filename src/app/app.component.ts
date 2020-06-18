@@ -10,11 +10,13 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class AppComponent implements OnInit {
   title = 'angularlib';
   options = {
-    // theme: 'bubble',
-    placeholder: '',
-    toolbar: [
-      ['bold', 'italic', 'underline', 'strike', 'image']
-    ]
+    // height: 'auto',
+    placeholder: 'Please type something ...',
+  };
+  optionsBubble = {
+    // height: 'auto',
+    theme: 'bubble',
+    placeholder: 'Please type something ...',
   };
   formObj: FormGroup;
   isSubmit = false;
@@ -22,12 +24,13 @@ export class AppComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private sanitizer: DomSanitizer
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     // creating form
     this.formObj = this.fb.group({
-      content: ['<b>hello WOrld</b>']
+      content: [''],
+      contentBubble: ['']
     });
   }
 
@@ -35,7 +38,7 @@ export class AppComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustHtml(this.formObj.value.content);
   }
 
-  submit() {
-    this.isSubmit = true;
+  get htmlPropertyBubble(): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(this.formObj.value.contentBubble);
   }
 }
