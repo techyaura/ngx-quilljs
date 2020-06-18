@@ -3,7 +3,6 @@ import {
   ElementRef,
   Input,
   AfterViewInit,
-  HostListener,
   forwardRef,
   ViewChild,
   ViewEncapsulation,
@@ -88,31 +87,17 @@ export class QuillComponent implements AfterViewInit, ControlValueAccessor, OnIn
       theme: this.quillConfig.theme
     });
     this.quillInstance.clipboard.dangerouslyPasteHTML(0, this.quillData);
-  }
 
-  @HostListener('keyup', ['$event.target'])
-  emitKeyUp(e: any) {
-    // console.log(this.quillInstance.root.innerHTML, 'KEY UP');
-    this.onChange(this.quillInstance.root.innerHTML);
-  }
-
-  @HostListener('click', ['$event.target'])
-  emitMouseUp(e: any) {
-    // console.log(this.quillInstance.root.innerHTML, 'Mouse UP');
-    this.onChange(this.quillInstance.root.innerHTML);
-  }
-
-  @HostListener('paste', ['$event.target'])
-  emitPaste(e: any) {
-    // console.log(this.quillInstance.root.innerHTML, 'PASTE');
-    this.onChange(this.quillInstance.root.innerHTML);
+    this.quillInstance.on('editor-change', (eventName, ...args) => {
+      if (eventName === 'text-change') {
+        this.onChange(this.quillInstance.root.innerHTML);
+      }
+    });
   }
 
   onChange = (text: any) => { };
 
-  registerOnTouched(fn: any) {
-    console.log('Init Editor');
-  }
+  registerOnTouched(fn: any) {}
 
   writeValue(value: null) {
     this.quillData = value || '';

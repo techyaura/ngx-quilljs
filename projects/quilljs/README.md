@@ -62,3 +62,6 @@ Bubble
 	['clean']                                            // remove formatting button
 ]
 ```
+
+## RELEASE [ v0.0.9 ] - Fixes
+-  Fixed image display issue. Now the content instantly sync as the user type
